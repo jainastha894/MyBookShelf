@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add new book</title>
+    <link rel="stylesheet" href="/styles/new.css">
+</head>
+<body>
+    <h1>welcome, you can add a new book you read</h1>
+
+    <form action="/submit" method="post">
+        <label>Title: <input name="title" type="text" required></label>
+        <label>Author: <input name="author" type="text" required></label>
+        <label>Rating out of 10: <input name="rating" type="number" required></label>
+        <label>notes: <textarea name="notes" id="notes" rows="40" cols="60" required></textarea></label>
+        
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>
