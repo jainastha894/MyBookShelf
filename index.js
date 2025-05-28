@@ -70,13 +70,21 @@ res.redirect("/");
 app.get("/sort",async (req,res)=>{
   const Sort_value= req.query.sortby;
   console.log("sort value recieved",Sort_value);
-  const sorted_array=await db.query(`select * from details order by ${Sort_value}`);
-  console.log(sorted_array);
-  res.render("index.ejs", {books: sorted_array.rows});
-  
+
   if(Sort_value=="nothing"){
     res.redirect("/");
   }
+  if(Sort_value=="rating"){
+    const sorted_array=await db.query(`select * from details order by ${Sort_value} desc`);
+      console.log(sorted_array);
+      res.render("index.ejs", {books: sorted_array.rows});
+  }
+  else{
+  const sorted_array=await db.query(`select * from details order by ${Sort_value}`);
+  console.log(sorted_array);
+  res.render("index.ejs", {books: sorted_array.rows});
+  }
+
 });
 app.listen(port, async () => {
   console.log(`Server running on port ${port}`);

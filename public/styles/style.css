@@ -9,6 +9,20 @@ body {
   line-height: 1.6;
 }
 
+header{
+  background-color: #d7e7ac;
+  text-align: center;
+  text-transform: capitalize;
+}
+body>p{
+  background-color: #d6f07a;
+  text-align: left;
+  padding-left: 150px;
+  height: 40px;
+  font-style: italic;
+  font-size: larger;
+  padding-top: 10px;
+}
 h1 {
   font-size: 32px;
   margin-bottom: 5px;
